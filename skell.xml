@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xml>
+<navitems>
+  <navitem>
+    <id>dashboard</id>
+    <data>Dashboard</data>
+    <data_feather>home</data_feather>
+  </navitem>
+  <navitem>
+    <id>orders</id>
+    <data>Orders</data>
+    <data_feather>file</data_feather>
+  </navitem>
+  <navitem>
+    <id>password</id>
+    <data>Password</data>
+    <data_feather>lock</data_feather>
+  </navitem>
+</navitems>
+<vars>
+  <value>
+    <id>brand</id>
+    <name>Company Name</name>
+    <navitem>dashboard</navitem>
+    <data>Datanest</data>
+    <type>readonly</type>
+  </value>
+  <value>
+    <id>title</id>
+    <name>Client Name</name>
+    <navitem>dashboard</navitem>
+    <data>justcluj</data>
+  </value>
+  <value>
+    <id>password</id>
+    <name>Password</name>
+    <navitem>password</navitem>
+    <type>password</type>
+    <data>fjsdkfjsadkgasdg;kfjrweg</data>
+  </value>
+</vars>
+
+</xml>

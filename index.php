@@ -45,9 +45,13 @@
 
 <body>
 
+<?php
+include("functions.php")
+?>
+
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
-  <span>Client</span>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><?php echo get_xml_data($data, "brand") ?></a>
+  <span><?php echo get_xml_data($data, "title") ?></span>
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <a class="nav-link" href="#">Sign out</a>
@@ -60,42 +64,21 @@
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
       <div class="nav sidebar-sticky">
         <ul class="nav flex-column">
+
+          <?php
+          $p_cnt = count($data->navitems->navitem);
+          for($i = 0; $i < $p_cnt; $i++) {
+            $navitem = $data->navitems->navitem[$i];
+            //print_r($navitem);
+          ?>
           <li class="nav-item">
-            <a class="nav-link active" href="#section-dashboard">
-              <span data-feather="home"></span>
-              Dashboard <span class="sr-only">(current)</span>
+            <a class="nav-link" href="#section-<?php echo $navitem->id; ?>">
+              <span data-feather="<?php echo $navitem->data_feather; ?>"></span>
+              <?php echo $navitem->data; ?>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section-orders">
-              <span data-feather="file"></span>
-              Orders
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="shopping-cart"></span>
-              Products
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="users"></span>
-              Customers
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="bar-chart-2"></span>
-              Reports
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section-password">
-              <span data-feather="lock"></span>
-              Password
-            </a>
-          </li>
+          <?php } ?>
+
           <li class="nav-item">
             <a class="nav-link" href="#section-subbmit">
               <button type="button" class="btn btn-success">Subbmit</button>
@@ -149,6 +132,8 @@
 
   </div>
 </div>
+
+<?php// var_dump($data); ?>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery.slim.min.js"><\/script>')</script>

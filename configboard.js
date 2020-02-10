@@ -11,7 +11,7 @@
 $(document).ready(function () {
     $('.nav ul li:first').addClass('active');
     $('.tab-content:not(:first)').hide();
-    $('.nav ul li a').click(function (event) {
+    $('nav ul li a').click(function (event) {
         event.preventDefault();
         var content = $(this).attr('href');
         $(this).parent().addClass('active');
