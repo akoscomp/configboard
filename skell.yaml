@@ -1,9 +1,0 @@
----
-company_name: Datanest
-client_name: justcluj
-navitems:
-  Dashboard:
-    name: dashboard
-  Password:
-    name: password
-    type: password

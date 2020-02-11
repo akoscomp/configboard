@@ -30,13 +30,21 @@
     <name>Client Name</name>
     <navitem>dashboard</navitem>
     <data>justcluj</data>
+    <type>string</type>
+  </value>
+  <value>
+    <id>order1</id>
+    <name>Order1</name>
+    <navitem>orders</navitem>
+    <data>Order Data</data>
+    <type>string</type>
   </value>
   <value>
     <id>password</id>
     <name>Password</name>
     <navitem>password</navitem>
-    <type>password</type>
     <data>fjsdkfjsadkgasdg;kfjrweg</data>
+    <type>password</type>
   </value>
 </vars>
 

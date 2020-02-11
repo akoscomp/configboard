@@ -4,15 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>Dashboard Template · Bootstrap</title>
-
-<!--    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/dashboard/"> -->
-
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors, Nagy Ákos">
+    <title>ConfigBoard</title>
     <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -89,57 +84,33 @@ include("functions.php")
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div id="section-dashboard" class="tab-content">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Dashboard</h1>
+      <?php
+      //create a section for each navitem
+      $p_cnt_navi = count($data->navitems->navitem);
+      for($i_navi = 0; $i_navi < $p_cnt_navi; $i_navi++) {
+        $id_nav = $data->navitems->navitem[$i_navi]->id;
+        $data_nav = $data->navitems->navitem[$i_navi]->data;
+      ?>
+        <div id="section-<?php echo $id_nav ?>" class="tab-content">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2"><?php echo $data_nav; ?></h1>
+          </div>
+          <?php
+          //print variables for each navitem
+          print_xml_navitem_vars($data, $id_nav);
+           ?>
         </div>
-        <span>ttt</span>
-      </div>
+      <?php } ?>
 
-      <div id="section-orders" class="tab-content">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Orders</h1>
-        </div>
-        <span>bbb</span>
-      </div>
-
-      <div id="section-password" class="tab-content">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Password</h1>
-        </div>
-        <label for="basic-url">Change you password</label>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon3">Old password</span>
-          </div>
-          <input type="password" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon3">New password</span>
-          </div>
-          <input type="password" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon3">Confirm password</span>
-          </div>
-          <input type="password" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-        </div>
-        <button type="button" class="btn btn-success">Subbmit</button>
-      </div>
     </main>
 
   </div>
 </div>
 
-<?php// var_dump($data); ?>
-
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery.slim.min.js"><\/script>')</script>
 <script src="js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 <script src="configboard.js"></script></body>
 
 </html>
