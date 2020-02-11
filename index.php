@@ -74,11 +74,6 @@ include("functions.php")
           </li>
           <?php } ?>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#section-subbmit">
-              <button type="button" class="btn btn-success">Subbmit</button>
-            </a>
-          </li>
         </ul>
       </div>
     </nav>

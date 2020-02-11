@@ -38,7 +38,7 @@ function print_xml_vars($type_var, $id_var, $name_var, $data_var) {
         echo '<div class="input-group-prepend">';
           echo '<span class="input-group-text" id="var-name-'.$id_var.'">'.$name_var.'</span>';
         echo '</div>';
-        echo '<input type="text" class="form-control" id="var-data-'.$id_var.'" aria-describedby="basic-addon3" value="'.$data_var.'">';
+        echo '<input type="text" class="form-control input-'.$type_var.'" id="var-data-'.$id_var.'" aria-describedby="basic-addon3" value="'.$data_var.'">';
       echo '</div>';
       break;
     case "password":

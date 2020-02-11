@@ -19,4 +19,7 @@ $(document).ready(function () {
         $(content).show();
         $(content).siblings('.tab-content').hide();
     });
+    $('#input-string').change(function (event) {
+      alert( "Handler for .change() called." );
+    });
 });
