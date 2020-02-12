@@ -6,6 +6,7 @@ It's usefull if you want to offer a settings page and you want to use this data 
 
 ## Dependency ##
 apache, nginx, etc. webserver, with php support
+
 php-xml
 
 ## Instalation ##
