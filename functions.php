@@ -1,6 +1,7 @@
 <?php
+include("config.php");
 
-$xml_filename = "skell.xml";
+$xml_filename = "data.xml";
 
 if (file_exists($xml_filename)) {
     $data = simplexml_load_file($xml_filename);
